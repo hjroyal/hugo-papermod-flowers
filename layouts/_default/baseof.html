@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language }}" dir="{{ .Language.LanguageDirection | default "auto" }}">
+
+<head>
+    {{- partial "head.html" . }}
+</head>
+
+
+<body class="
+{{- if (or (ne .Kind `page` ) (eq .Layout `archives`) (eq .Layout `search`) (eq .Layout `tags`) (eq .Layout `about`) (eq .Layout `links`)) -}}
+{{- print "list" -}}
+{{- end -}}
+{{- if eq $.Site.Params.defaultTheme `dark` -}}
+{{- print " dark" }}
+{{- end -}}
+" id="top">
+{{- partialCached "header.html" . .Page -}}
+<main class="main {{- if (eq .Kind `page`) -}}{{- print " page" -}}{{- end -}}">
+{{- block "main" . }}{{ end }}
+</main>
+{{ partialCached "footer.html" . .Layout .Kind (.Param "hideFooter") (.Param "ShowCodeCopyButtons") -}}
+
+<!-- 下雪特效 -->
+<!-- <script src="https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js"></script>
+<script>
+    var sf = new Snowflakes({
+        speed: 0.5
+    });
+</script> -->
+
+<!-- 樱花特效 -->
+<!-- <script src="https://api.vvhan.com/api/yinghua"></script> -->
+<!-- <script src="https://cangshui.net/-down/otherweb/JSCSS/yinghua.js"></script> -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.2/js/custom/click.min.js"></script>
+
+<!-- <script type="text/javascript"src="https://cdn.jsdelivr.net/gh/fz6m/Private-web@1.2/js/sakura/sakura-small.js"></script> -->
+
+<!-- 新年快乐 -->
+<!-- <script src="https://api.vvhan.com/api/denglong2"></script> -->
+
+<!-- 梅花特效 -->
+<!-- <script src="https://api.vvhan.com/api/meihua"></script> -->
+
+
+<link rel="stylesheet" href="https://cdn.staticfile.org/lxgw-wenkai-screen-webfont/1.6.0/lxgwwenkaiscreen.css" media="print" onload="this.media='all'">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js"></script>
+<script>
+  pangu.spacingPage();
+</script>
+<!-- 添加中英文混杂空格 -->
+
+
+
+</body>
+
+</html>

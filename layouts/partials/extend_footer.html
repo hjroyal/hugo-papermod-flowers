@@ -1,0 +1,29 @@
+{{- /* Footer custom content area start */ -}}
+{{- /* Insert any custom code web-analytics, resources, etc. here */ -}}
+{{- /* Footer custom content area end */ -}}
+
+<!-- admonition 模块 -->
+<script>
+    let detail = document.getElementsByClassName('details')
+    details = [].slice.call(detail);
+    for (let index = 0; index < details.length; index++) {
+        let element = details[index]
+        const summary = element.getElementsByClassName('details-summary')[0];
+        if (summary) {
+            summary.addEventListener('click', () => {
+                element.classList.toggle('open');
+            }, false);
+        }
+    }
+</script>
+
+
+<script>
+    var s1 = '2022-09-10';//设置为建站时间
+    s1 = new Date(s1.replace(/-/g, "/"));
+    s2 = new Date();
+    var days = s2.getTime() - s1.getTime();
+    var number_of_days = parseInt(days / (1000 * 60 * 60 * 24));
+    document.getElementById('days').innerHTML = number_of_days;
+</script>
+

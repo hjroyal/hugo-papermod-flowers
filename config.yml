@@ -1,0 +1,262 @@
+baseURL: https://blog.hjroyal.top # 绑定的域名
+languageCode: zh-cn #zh-cn #
+title: 有意栽花花满枝
+theme: hugo-PaperMod # 主题名字，和themes文件夹下的一致
+
+
+enableInlineShortcodes: true
+enableEmoji: true # 允许使用 Emoji 表情，建议 true
+enableRobotsTXT: true # 允许爬虫抓取到搜索引擎，建议 true
+hasCJKLanguage: true # 自动检测是否包含 中文日文韩文 如果文章中使用了很多中文引号的话可以开启
+
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+googleAnalytics:  # 谷歌统计衡量ID
+# Copyright: hjroyal
+
+paginate: 5 # 首页每页显示的文章数
+summaryLength: 100 # 文章概览的自字数，默认70
+
+minify:
+  disableXML: true
+  # minifyOutput: true
+
+permalinks: # 访问博客时网址的显示形式
+  post: "/:title/"
+  # post: "/:year/:month/:day/:title/"
+
+defaultContentLanguage: en # 最顶部首先展示的语言页面
+defaultContentLanguageInSubdir: true # 影响网站路径 
+
+languages:
+  en:
+    languageName: "中文"
+    languageAltTitle: Chinese
+    weight: 1
+    title: 有意栽花花满枝
+
+    menu:
+      main:
+        - identifier: search
+          name: 🔍 搜索
+          url: search/
+          weight: 1
+        - identifier: posts
+          name: 📚 系列
+          url: posts
+          weight: 3
+        - identifier: archives
+          name: ⏱ 时间轴
+          url: archives/
+          weight: 20
+        - identifier: about
+          name: 🙋🏻‍♂️ 关于
+          url: about
+          weight: 50
+        # - identifier: links
+        #   name: 🤝 友链
+        #   url: links/
+        #   weight: 60
+        # - name: 🚇️ 开往
+        #   url: https://www.travellings.cn
+        # - name: Discord
+        #   url: https://discord.gg/ahpmTvhVmp
+
+
+
+# 这里的参数会被代码以 .Site.Params 的形式读取
+params:
+  homeInfoParams:
+        Title: "Hi Friend! 🐳"
+        Content:  >
+          欢迎来到hjroyal的个人博客!
+
+          - 这是[有意栽花花满枝](https://blog.hjroyal.top/)网站的框架，你可以在此基础上自定义修改~
+
+
+  env: production # to enable google analytics, opengraph, twitter-cards and schema.
+  description: "有意栽花花满枝" #利于搜索
+  author: ["hjroyal"]
+  # author: ["Me", "You"] # multiple authors
+  enableimgloop: true #开启自定义shortcode功能
+  enableadmonition: true
+
+
+  defaultTheme: auto # defaultTheme: light or  dark
+  disableThemeToggle: false
+  DateFormat: "2006-01-02"
+  ShowShareButtons: false
+  # ShareButtons: ["bilibili", "twitter"] #配置社交平台分享链接
+  ShowReadingTime: true
+  # disableSpecialistPost: true
+  displayFullLangName: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  hideFooter: false # 隐藏页脚
+  ShowWordCounts: true
+  VisitCount: true
+  # ShowLastMod: true #显示文章更新时间
+  copyright: true
+  seriesTitle: "📚️ 系列"
+  tagsTitle: "🧩 标签"
+  cover:
+    hidden: false # hide everywhere but not in structured data
+    hiddenInList: false # hide on list pages and home
+    hiddenInSingle: true # hide on single page
+  socialIcons:
+    - name: github
+      url: "https://github.com/hjroyal"
+    - name: QQ
+      url: "https://s1.ax1x.com/2023/08/13/pPKNGLD.jpg"      
+    - name: bilibili
+      url: "https://space.bilibili.com/76998877"
+    - name: zhihu
+      url: "https://zhihu.com/people/sjtuhj"
+    - name: RSS
+      url: "index.xml"
+
+  ShowToc: true # 显示目录
+  TocOpen: false # 自动展开目录
+
+  comments: true
+
+  label: # 左上角图标
+    text: "有意栽花花满枝" 
+    icon: "img/profile.webp"
+    iconHeight: 32
+
+  analytics:
+    google:
+      SiteVerificationTag: ""
+
+  assets:
+    favicon: "img/profile.webp"
+    favicon16x16: "img/profile.webp"
+    favicon32x32: "img/profile.webp"
+    apple_touch_icon: "img/profile.webp"
+    safari_pinned_tab: "img/profile.webp"
+    disableFingerprinting: true #解决部署到github pages，样式丢失问题
+
+  fuseOpts: # 搜索配置
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary"]
+
+  StartYear: 2022 # 底部开始年份
+  # FilingNo: 沪ICP备2023001110号 # 底部备案号
+  # PublicSecurityIconLink: img/beian.png # 填自己的公安图标链接,可用绝对路径，相对路径如 img/beian.png
+  # PublicNetworkSecurity: 川公网安备51192302000225号 # 底部公网安备号
+  # SponsorsLink: img/又拍云_logo5.png #其他修改前往 layouts\partials\footer.html
+
+  Reward: true #打赏是否开启
+  # 打赏微信图片地址，
+  # 可用绝对和相对地址，相对地址的图片需放在static/img下，
+  # 填写格式为img/wechat_pay.png
+  WechatPay: img/wechat_pay.png
+  Alipay: img/alipay.png #打赏支付宝图片地址
+
+  # twikoo评论
+  twikoo:
+    version: 1.6.16 # 填写twikoo版本号
+    id: https://twikoo-comments.hjroyal.top # 填写自己的twikoo id
+    region: # 环境地域，默认为 ap-shanghai，如果您的环境地域不是上海，需传此参数，请看twikoo官方文档
+    visitor: true
+
+  # enableGitalk: true
+  # # gittalk评论
+  # gittalk:
+  #   clientID: "d4f41cb1b3a948fcb1bf" # 您刚才创建Github Application 的 Client ID
+  #   clientSecret: "e7ed0faf1bc20de4447928c0046847c0a99aa0a9" # 您刚才创建Github Application 的 Client Secret
+  #   repo: "blog-comments" # 评论仓库名
+  #   owner: "hjroyal" # 您的GitHub ID
+  #   admin: "hjroyal" # 您的GitHub ID
+  #   id: "location.pathname" # 文章页面的链接地址就是ID
+  #   labels: "gitalk" # Github issue labels. If you used to use Gitment, you can change it
+  #   perPage: 15 # Pagination size, with maximum 100.
+  #   pagerDirection: "last" # Comment sorting direction, available values are 'last' and 'first'.
+  #   createIssueManually: true # 设置为true，如果是管理员登录，会自动创建issue，如果是false，需要管理员手动添加第一个评论(issue)
+  #   distractionFreeMode: false # Enable hot key (cmd|ctrl + enter) submit comment.
+
+
+  # 随机图片，全局默认值，非必须
+  randomImage:
+    # 是否启用，默认 true
+    enable: true
+    # 图片链接，默认值如下，可替换为其他服务提供者
+    api: "https://source.unsplash.com/random/${w}x${h}?${t}"
+    # 图片宽，默认 1，不大于 1 时将自动计算为 页面宽*width 并向上取整
+    # 解析时将替换 randomImage.api 中 ${w}
+    width: "940"
+    # 图片高，默认 0.5，不大于 1 时将自动计算为 屏幕高*height 并向上取整
+    # 解析时将替换 randomImage.api 中 ${h}
+    height: "278"
+    # 图片主题，无默认值
+    # 解析时将替换 randomImage.api 中 ${t}
+    topic: ""
+
+taxonomies:
+  category: categories
+  tag: tags
+  series: series
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # HUGO 默认转义 Markdown 文件中的 HTML 代码，如需开启的话
+  highlight:
+    # anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    # lineNos: true
+    noClasses: true
+    tabWidth: 4
+    style: LXGWWenKai-Light
+    # codeFences：代码围栏功能，这个功能一般都要设为 true 的，不然很难看，就是干巴巴的-代码文字，没有颜色。
+    # guessSyntax：猜测语法，这个功能建议设置为 true, 如果你没有设置要显示的语言则会自动匹配。
+    # hl_Lines：高亮的行号，一般这个不设置，因为每个代码块我们可能希望让高亮的地方不一样。
+    # lineNoStart：行号从编号几开始，一般从 1 开始。
+    # lineNos：是否显示行号，我比较喜欢显示，所以我设置的为 true.
+    # lineNumbersInTable：使用表来格式化行号和代码,而不是 标签。这个属性一般设置为 true.
+    # noClasses：使用 class 标签，而不是内嵌的内联样式
+
+privacy:
+  vimeo:
+    disabled: false
+    simple: true
+
+  twitter:
+    disabled: false
+    enableDNT: true
+    simple: true
+
+  instagram:
+    disabled: false
+    simple: true
+
+  youtube:
+    disabled: false
+    privacyEnhanced: true
+
+  googleAnalytics:
+    disable: false
+
+services:
+  instagram:
+    disableInlineCSS: true
+  twitter:
+    disableInlineCSS: true
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+
